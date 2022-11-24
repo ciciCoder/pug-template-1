@@ -1,0 +1,79 @@
+doctype
+
+html
+  head
+    link(link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous")
+    style.
+      main, .wrapper {
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow: hidden;
+      }
+      .card {
+        position: absolute;
+        height: 800px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+      }
+      .img-col {
+        overflow: hidden;
+      }
+      .background-img {
+        width: 100%;
+        background-size: 100%;
+      }
+      .banner-img {
+        max-height: 150px;
+      }
+      .top-img {
+        height: 150px;
+        overflow: hidden;
+        background: url('https://via.placeholder.com/1920/52AD5A');
+      }
+  body
+    main
+      div.row.wrapper
+        div.col-7.img-col
+          img(src="img/background.jpg").background-img
+        div.col-5
+          div.card
+            div.card-body
+              div.container
+                div.top-img.card-img-top.mb-3
+                  //- img.card-img-top(src="https://via.placeholder.com/1920/52AD5A" alt="...").banner-img
+                div.row
+                  div.col-6
+                    label(for="inpt-firstname" class="form-label ")
+                      strong First name
+                    input(class="form-control" id="inpt-firstname")
+                  div.col-6
+                    label(for="inpt-lastname" class="form-label")
+                      strong Last name
+                    input(class="form-control" id="inpt-lastname")
+                  div.col-12.my-3
+                    label(for="inpt-email" class="form-label")
+                      strong Email
+                    input(class="form-control" id="inpt-email" type="email")
+                  div.col-6
+                    label(for="inpt-mobile" class="form-label")
+                      strong Mobile number
+                    input(class="form-control" id="inpt-mobile")
+                  div.col-6
+                    label(for="inpt-country" class="form-label")
+                      strong Country
+                    input(class="form-control" id="inpt-country")
+                  div.col-6.mt-3
+                    label(for="inpt-password" class="form-label")
+                      strong Password
+                    input(class="form-control" id="inpt-password" type="password")
+                  div.col-6.mt-3
+                    label(for="inpt-conf-password" class="form-label")
+                      strong  Confirm Password
+                    input(class="form-control" id="inpt-conf-password" type="password")
+                  div.col-12.mt-3.d-grid
+                    button.btn.btn-warning.text-white Create an account
+                  div.col-12.mt-3.text-center
+                    div.card-text Already have a VIP account? 
+                      a(href="#").text-warning Sign in
+            
