@@ -30,6 +30,17 @@ html
         font-family: 'Tinos', serif;
         font-weight: bold;
       }
+    script.
+      window
+      function onChange() {
+        const password = document.querySelector('input[name=password]')
+        const confirm = document.querySelector('input[name=confirm_password]')
+        if (confirm.value === password.value) {
+          confirm.setCustomValidity('')
+          return
+        } 
+        confirm.setCustomValidity('Passwords do not match')
+      }
   body
     main
       div.row.wrapper
@@ -48,39 +59,39 @@ html
                         | Get into island spirit at
                         h1 The Collective Palm Beach
                         span.text-warning One with the best beach bars in Wakanda offering light meals and island-style drinks overlooking the beach
-
-                div.row
-                  div.col-6
-                    label(for="inpt-firstname" class="form-label ")
-                      strong First name
-                    input(class="form-control" id="inpt-firstname")
-                  div.col-6
-                    label(for="inpt-lastname" class="form-label")
-                      strong Last name
-                    input(class="form-control" id="inpt-lastname")
-                  div.col-12.my-3
-                    label(for="inpt-email" class="form-label")
-                      strong Email
-                    input(class="form-control" id="inpt-email" type="email")
-                  div.col-6
-                    label(for="inpt-mobile" class="form-label")
-                      strong Mobile number
-                    input(class="form-control" id="inpt-mobile")
-                  div.col-6
-                    label(for="inpt-country" class="form-label")
-                      strong Country
-                    input(class="form-control" id="inpt-country")
-                  div.col-6.mt-3
-                    label(for="inpt-password" class="form-label")
-                      strong Password
-                    input(class="form-control" id="inpt-password" type="password")
-                  div.col-6.mt-3
-                    label(for="inpt-conf-password" class="form-label")
-                      strong  Confirm Password
-                    input(class="form-control" id="inpt-conf-password" type="password")
-                  div.col-12.mt-3.d-grid
-                    button.btn.btn-warning.text-white Create an account
-                  div.col-12.mt-3.text-center
-                    div.card-text Already have a VIP account? 
-                      a(href="#").text-warning Sign in
-            
+                form(action="#" method="post")
+                  div.row
+                    div.col-6
+                      label(for="inpt-firstname" class="form-label ")
+                        strong First name
+                      input(class="form-control" id="inpt-firstname")
+                    div.col-6
+                      label(for="inpt-lastname" class="form-label")
+                        strong Last name
+                      input(class="form-control" id="inpt-lastname")
+                    div.col-12.my-3
+                      label(for="inpt-email" class="form-label")
+                        strong Email
+                      input(class="form-control" id="inpt-email" type="email")
+                    div.col-6
+                      label(for="inpt-mobile" class="form-label")
+                        strong Mobile number
+                      input(class="form-control" id="inpt-mobile")
+                    div.col-6
+                      label(for="inpt-country" class="form-label")
+                        strong Country
+                      input(class="form-control" id="inpt-country")
+                    div.col-6.mt-3
+                      label(for="inpt-password" class="form-label")
+                        strong Password
+                      input(class="form-control" name="password" id="inpt-password" type="password" onchange="onChange()" required)
+                    div.col-6.mt-3
+                      label(for="inpt-conf-password" class="form-label")
+                        strong  Confirm Password
+                      input(class="form-control" name="confirm_password" id="inpt-conf-password" type="password" onchange="onChange()" required)
+                    div.col-12.mt-3.d-grid
+                      button.btn.btn-warning.text-white(type="submit") Create an account
+                    div.col-12.mt-3.text-center
+                      div.card-text Already have a VIP account? 
+                        a(href="#").text-warning Sign in
+              

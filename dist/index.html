@@ -30,6 +30,18 @@
         font-weight: bold;
       }
     </style>
+    <script>
+      window
+      function onChange() {
+        const password = document.querySelector('input[name=password]')
+        const confirm = document.querySelector('input[name=confirm_password]')
+        if (confirm.value === password.value) {
+          confirm.setCustomValidity('')
+          return
+        } 
+        confirm.setCustomValidity('Passwords do not match')
+      }
+    </script>
   </head>
   <body>
     <main>
@@ -49,42 +61,44 @@
                     </div>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-6">
-                    <label class="form-label " for="inpt-firstname"><strong>First name</strong></label>
-                    <input class="form-control" id="inpt-firstname">
+                <form action="#" method="post">
+                  <div class="row">
+                    <div class="col-6">
+                      <label class="form-label " for="inpt-firstname"><strong>First name</strong></label>
+                      <input class="form-control" id="inpt-firstname">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label" for="inpt-lastname"><strong>Last name</strong></label>
+                      <input class="form-control" id="inpt-lastname">
+                    </div>
+                    <div class="col-12 my-3">
+                      <label class="form-label" for="inpt-email"><strong>Email</strong></label>
+                      <input class="form-control" id="inpt-email" type="email">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label" for="inpt-mobile"><strong>Mobile number</strong></label>
+                      <input class="form-control" id="inpt-mobile">
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label" for="inpt-country"><strong>Country</strong></label>
+                      <input class="form-control" id="inpt-country">
+                    </div>
+                    <div class="col-6 mt-3">
+                      <label class="form-label" for="inpt-password"><strong>Password</strong></label>
+                      <input class="form-control" name="password" id="inpt-password" type="password" onchange="onChange()" required>
+                    </div>
+                    <div class="col-6 mt-3">
+                      <label class="form-label" for="inpt-conf-password"><strong> Confirm Password</strong></label>
+                      <input class="form-control" name="confirm_password" id="inpt-conf-password" type="password" onchange="onChange()" required>
+                    </div>
+                    <div class="col-12 mt-3 d-grid">
+                      <button class="btn btn-warning text-white" type="submit">Create an account</button>
+                    </div>
+                    <div class="col-12 mt-3 text-center">
+                      <div class="card-text">Already have a VIP account? <a class="text-warning" href="#">Sign in</a></div>
+                    </div>
                   </div>
-                  <div class="col-6">
-                    <label class="form-label" for="inpt-lastname"><strong>Last name</strong></label>
-                    <input class="form-control" id="inpt-lastname">
-                  </div>
-                  <div class="col-12 my-3">
-                    <label class="form-label" for="inpt-email"><strong>Email</strong></label>
-                    <input class="form-control" id="inpt-email" type="email">
-                  </div>
-                  <div class="col-6">
-                    <label class="form-label" for="inpt-mobile"><strong>Mobile number</strong></label>
-                    <input class="form-control" id="inpt-mobile">
-                  </div>
-                  <div class="col-6">
-                    <label class="form-label" for="inpt-country"><strong>Country</strong></label>
-                    <input class="form-control" id="inpt-country">
-                  </div>
-                  <div class="col-6 mt-3">
-                    <label class="form-label" for="inpt-password"><strong>Password</strong></label>
-                    <input class="form-control" id="inpt-password" type="password">
-                  </div>
-                  <div class="col-6 mt-3">
-                    <label class="form-label" for="inpt-conf-password"><strong> Confirm Password</strong></label>
-                    <input class="form-control" id="inpt-conf-password" type="password">
-                  </div>
-                  <div class="col-12 mt-3 d-grid">
-                    <button class="btn btn-warning text-white">Create an account</button>
-                  </div>
-                  <div class="col-12 mt-3 text-center">
-                    <div class="card-text">Already have a VIP account? <a class="text-warning" href="#">Sign in</a></div>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

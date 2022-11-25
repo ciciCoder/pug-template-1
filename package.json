@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "serve": "pug ./src -o ./dist -w -P",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
